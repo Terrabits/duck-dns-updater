@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+URL="https://www.duckdns.org/update?domains=$DOMAINS&token=$TOKEN&ip="
+curl -s -S -k "$URL"
