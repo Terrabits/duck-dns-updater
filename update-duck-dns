@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
 
 URL="https://www.duckdns.org/update?domains=$DOMAINS&token=$TOKEN&ip="
-curl -s -S -k "$URL"
+RESULT="$(curl -s -S -k "$URL")"
+if [ "$RESULT" == "OK" ] ; then
+  echo "OK,    $(date)"
+else
+  echo "ERROR, $(date)"
+fi
